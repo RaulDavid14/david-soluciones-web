@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Servicios{% endblock title %}
+
+{% block body %}
+<header class="masthead" style="background-image: url('{%static 'img/servicios.png' %}')">
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <section>
+    <div class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom">Servicios</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <p>Erp</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+{% endblock body %}
