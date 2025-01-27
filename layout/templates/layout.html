@@ -9,7 +9,6 @@
     <title>{% block title %}{% endblock title %}</title>
     
     {% load static %}
-    <!-- Estilos y fuentes del template  -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{%static 'css/clean-blog.min.css' %}" rel="stylesheet">
@@ -20,7 +19,6 @@
 
   <body>
 
-    <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="{%url 'home' %}">David Soluciones</a>
@@ -50,7 +48,6 @@
     {% block body %}
     {% endblock body %}
 
-    <!-- Pié de página -->
     <footer>
       <div class="container">
         <div class="row">
@@ -88,11 +85,9 @@
     </footer>
 
 
-    <!-- Bootstrap y Javascripts -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/clean-blog.min.js' %}"></script>
 
   </body>
-
 </html>

@@ -20,31 +20,33 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-            <p>Contáctanos para conocer </p>
+            <h4> Tienes algun proyecto en mente, contactanos para hacerlo realidad. </h4>
               <br>
           </div>
         </div>
-        <div class="">
-          <form action="" method="post">
+        <div class="text-center row">
+          <form action="{% url 'enviar' %}" method="post">
             {% csrf_token %}
-
             <div class="">
-
+              <label for="{{formulario.nombre.id_for_label}}">{{formulario.nombre.label}}</label>
+              <input id="{{formulario.nombre.id_for_label}}" type="text" name="{{formulario.nombre.name}}" required>
             </div>
 
             <div class="">
-
+              <label for="{{formulario.telefono.id_for_label}}">{{formulario.telefono.label}}</label>
+              <input type="tel" name="{{formulario.telefono.namel}}" id="{{formulario.telefono.id_for_label}}" required>
             </div>
             
             <div class="">
-
+              <label for="{{formulario.email.id_for_label}}">{{formulario.email.label}}</label>
+              <input type="email" name="{{formulario.email.name}}" id="{{formulario.email.id_for_label}}" required>
             </div>
-                
+            
+            <div class="">
+              <input class="btn btn-outline-success" type="submit" value="Enviar">
+            </div>
           </form>
         </div>
       </div>
-  
       <hr>
-  
 {% endblock body %}
