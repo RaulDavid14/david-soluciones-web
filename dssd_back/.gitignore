@@ -1,0 +1,68 @@
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de entorno
+.env
+.env.*
+
+# Archivos de base de datos y SQLite
+*.sqlite3
+*.db
+
+# Archivos temporales
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.DS_Store
+*.bak
+
+# Archivos de migraciones (si no quieres ignorarlos, elimina esta línea)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+# */migrations/*.py  ← ⚠️ Si quieres mantener tus migraciones, NO ignores los `.py`
+
+# Archivos de cache
+.cache/
+*.tmp
+
+# Configuración del editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de media (si se generan en dev)
+media/
+staticfiles/
+static/
+
+# Archivos de compilación (si usas Webpack, React, etc.)
+node_modules/
+build/
+dist/
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Coverage y testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+
+# Jupyter notebooks (si usas)
+.ipynb_checkpoints/
