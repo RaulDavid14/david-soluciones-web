@@ -2,7 +2,7 @@
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-gray-900">
+    <section id="benefits" className="py-24 bg-gray-900">
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <h2 className="text-4xl md:text-5xl font-bold mb-6">

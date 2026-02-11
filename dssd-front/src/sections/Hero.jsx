@@ -22,7 +22,7 @@ const item = {
 
 export default function Hero() {
   return (
-    <section className="relative py-32 lg:py-40 text-center overflow-hidden">
+    <section id="home" className="relative py-32 lg:py-40 text-center overflow-hidden">
       <motion.video
         className="absolute inset-0 w-full h-full object-cover"
         src="/hero.mp4"
@@ -65,20 +65,10 @@ export default function Hero() {
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <motion.a
-            href="#escaneo"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-white shadow-lg
-              px-8 py-4 text-base sm:text-lg md:text-xl"
-          >
-            Escanear mi sitio
-          </motion.a>
-
-          <motion.a
             href="#desarrollo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-white/10 hover:bg-white/20 rounded-lg font-semibold text-white border border-white/30
+            className="bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-white shadow-lg
               px-8 py-4 text-base sm:text-lg md:text-xl"
           >
             Cotiza tu proyecto
@@ -89,7 +79,7 @@ export default function Hero() {
           variants={item}
           className="mt-6 text-gray-300 text-xs sm:text-sm md:text-base"
         >
-          Auditorías de seguridad • Desarrollo de software a la medida
+          Desarrollo de software a la medida
         </motion.p>
       </motion.div>
     </section>
