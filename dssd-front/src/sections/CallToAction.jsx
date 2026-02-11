@@ -62,17 +62,6 @@ export default function CallToAction() {
                        hover:from-indigo-500 hover:to-cyan-500
                        transition"
           >
-            Iniciar escaneo de seguridad
-          </motion.a>
-
-          <motion.a
-            href="#contacto"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium 
-                       border border-neutral-700 text-white 
-                       hover:bg-neutral-900 transition"
-          >
             Cotizar desarrollo de software
           </motion.a>
         </motion.div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function QualificationSection() {
   return (
-    <section className="relative py-28 bg-neutral-950 overflow-hidden">
+    <section id="process" className="relative py-28 bg-neutral-950 overflow-hidden">
       
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-cyan-500/10" />
 
