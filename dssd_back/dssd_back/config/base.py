@@ -1,14 +1,32 @@
 from pathlib import Path
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure-0j&24dt5*#at6dn01%6g4d5%8=0bonc&zbl7ss^q9jfy%lgop#'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
 
-INSTALLED_APPS = [
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+EMAIL_USE_SSL = config('EMAIL_USE_SSL', cast=bool, default=False)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default=False)
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+LOCAL_APPS = [
+    'solicitud_proyectos_app',
+]
+
+THIRD_PARTY_APPS = [
     'rest_framework',
+]
+
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -16,6 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
