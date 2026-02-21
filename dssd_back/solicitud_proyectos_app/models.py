@@ -12,7 +12,7 @@ class SolicitudProyectoModel(models.Model):
 
     descripcion_proyecto = models.TextField()
 
-    presupuesto = models.DecimalField(max_digits=8, decimal_places=2)
+    presupuesto = models.CharField(max_length=40)
 
     fecha_solicitud = models.DateTimeField(auto_now_add=True)
     
