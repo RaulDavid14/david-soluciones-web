@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Services() {
+export default function Services({ onOpenModal }) {
   return (
     <section id="services" className="py-32 bg-neutral-900">
       <div className="max-w-5xl mx-auto px-6">
@@ -46,12 +46,15 @@ export default function Services() {
             <li>• Aplicaciones web personalizadas</li>
           </ul>
 
-          <a
-            href="#contacto"
+          <motion.button
+            onClick={onOpenModal}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
             className="inline-block border border-neutral-500 px-8 py-4 rounded-lg text-base md:text-lg font-medium text-white hover:bg-neutral-800 transition"
           >
             Cotiza tu proyecto
-          </a>
+          </motion.button>
+
         </motion.div>
 
       </div>

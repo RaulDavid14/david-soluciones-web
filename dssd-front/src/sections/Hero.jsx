@@ -20,7 +20,7 @@ const item = {
   },
 };
 
-export default function Hero() {
+export default function Hero({ onOpenModal }) {
   return (
     <section id="home" className="relative py-32 lg:py-40 text-center overflow-hidden">
       <motion.video
@@ -64,15 +64,15 @@ export default function Hero() {
           variants={item}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <motion.a
-            href="#desarrollo"
+          <motion.button
+            onClick={onOpenModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-white shadow-lg
               px-8 py-4 text-base sm:text-lg md:text-xl"
           >
             Cotiza tu proyecto
-          </motion.a>
+          </motion.button>
         </motion.div>
 
         <motion.p
