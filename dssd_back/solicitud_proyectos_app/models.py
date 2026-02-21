@@ -20,3 +20,6 @@ class SolicitudProyectoModel(models.Model):
         db_table = 'solicitudes_proyectos'
         verbose_name = 'Solicitud de proyecto'
         verbose_name_plural = 'Solicitudes de proyectos'
+        
+    def __str__(self):
+        return f'{self.nombre} - email: {self.email}'
