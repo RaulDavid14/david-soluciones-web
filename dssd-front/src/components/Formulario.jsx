@@ -29,19 +29,38 @@ export default function Formulario() {
 
     try {
       const request = {
-        nombreCompleto,
-        nombreOrganizacion,
-        telefono,
-        email,
-        descripcionProyecto,
-        presupuesto,
+        nombre: nombreCompleto,
+        nombre_organizacion: nombreOrganizacion,
+        telefono: telefono,
+        email: email,
+        descripcion_proyecto: descripcionProyecto,
+        presupuesto: presupuesto,
       };
 
-      console.log(request);
+      const response = await fetch("http://127.0.0.1:8000/solicitud", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(request),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar el formulario");
+      }
 
       setSuccess(true);
+
+      // limpiar campos
+      setNombreCompleto("");
+      setNombreOrganizacion("");
+      setTelefono("");
+      setEmail("");
+      setDescripcionProyecto("");
+      setPresupuesto("");
+
     } catch (err) {
-      setError("Ocurrió un error al enviar el formulario.");
+      setError(err.message || "Ocurrió un error al enviar el formulario.");
     } finally {
       setLoading(false);
     }
@@ -53,7 +72,6 @@ export default function Formulario() {
       className="flex flex-col gap-5 text-neutral-200"
     >
 
-      {/* Nombre */}
       <div className="relative">
         <input
           type="text"
@@ -130,15 +148,9 @@ export default function Formulario() {
           className={`${inputStyle} appearance-none`}
         >
           <option value="" className="bg-neutral-900"> </option>
-          <option value="1000-3000" className="bg-neutral-900">
-            $1,000 - $3,000
-          </option>
-          <option value="3000-10000" className="bg-neutral-900">
-            $3,000 - $10,000
-          </option>
-          <option value="10000+" className="bg-neutral-900">
-            $10,000+
-          </option>
+          <option value="1000.00">$1,000.00</option>
+          <option value="3000.00">$3,000.00</option>
+          <option value="10000.00">$10,000.00</option>
         </select>
         <label className={labelStyle}>
           Presupuesto estimado
