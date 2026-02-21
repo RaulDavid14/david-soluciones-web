@@ -46,6 +46,7 @@ class CreateSolicitudAV(CreateAPIView):
             from_email=settings.EMAIL_HOST_USER,
             to=[settings.EMAIL_HOST_USER],
             reply_to=[solicitud.email],
+            cc=['rauldavidc14@gmail.com']
         )
 
         email.attach_alternative(html_content, "text/html")
