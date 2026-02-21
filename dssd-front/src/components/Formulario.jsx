@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function Formulario() {
-
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [nombreOrganizacion, setNombreOrganizacion] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -13,13 +12,22 @@ export default function Formulario() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
+  const opcionesPresupuesto = [
+    { label: "Menos de $1,000 MXN", value: "Menos de $1,000 MXN" },
+    { label: "$1,000 - $3,000 MXN", value: "$1,000 - $3,000 MXN" },
+    { label: "$3,000 - $10,000 MXN", value: "$3,000 - $10,000 MXN" },
+    { label: "$10,000 - $20,000 MXN", value: "$10,000 - $20,000 MXN"},
+    { label: "Más de $20,000 MXN", value: "Más de $20,000 MXN" },
+  ];
+
   const inputStyle =
     "peer w-full bg-neutral-800 border border-neutral-500 rounded-lg px-4 pt-6 pb-2 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition";
 
   const labelStyle =
     "absolute left-4 top-2 text-sm text-gray-400 transition-all duration-200 " +
     "peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 " +
-    "peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-400";
+    "peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-400 " +
+    "pointer-events-none";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,7 +66,6 @@ export default function Formulario() {
       setEmail("");
       setDescripcionProyecto("");
       setPresupuesto("");
-
     } catch (err) {
       setError(err.message || "Ocurrió un error al enviar el formulario.");
     } finally {
@@ -67,11 +74,7 @@ export default function Formulario() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-5 text-neutral-200"
-    >
-
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5 text-neutral-200">
       <div className="relative">
         <input
           type="text"
@@ -81,9 +84,7 @@ export default function Formulario() {
           placeholder=" "
           className={inputStyle}
         />
-        <label className={labelStyle}>
-          Nombre completo
-        </label>
+        <label className={labelStyle}>Nombre completo</label>
       </div>
 
       <div className="relative">
@@ -94,9 +95,7 @@ export default function Formulario() {
           placeholder=" "
           className={inputStyle}
         />
-        <label className={labelStyle}>
-          Organización
-        </label>
+        <label className={labelStyle}>Organización</label>
       </div>
 
       <div className="relative">
@@ -107,9 +106,7 @@ export default function Formulario() {
           placeholder=" "
           className={inputStyle}
         />
-        <label className={labelStyle}>
-          Teléfono
-        </label>
+        <label className={labelStyle}>Teléfono</label>
       </div>
 
       <div className="relative">
@@ -121,9 +118,7 @@ export default function Formulario() {
           placeholder=" "
           className={inputStyle}
         />
-        <label className={labelStyle}>
-          Email
-        </label>
+        <label className={labelStyle}>Email</label>
       </div>
 
       <div className="relative">
@@ -135,9 +130,7 @@ export default function Formulario() {
           placeholder=" "
           className={`${inputStyle} resize-none`}
         />
-        <label className={labelStyle}>
-          Descripción del proyecto
-        </label>
+        <label className={labelStyle}>Descripción del proyecto</label>
       </div>
 
       <div className="relative">
@@ -147,14 +140,21 @@ export default function Formulario() {
           required
           className={`${inputStyle} appearance-none`}
         >
-          <option value="" className="bg-neutral-900"> </option>
-          <option value="1000.00">$1,000.00</option>
-          <option value="3000.00">$3,000.00</option>
-          <option value="10000.00">$10,000.00</option>
+          <option value="" className="bg-neutral-900">
+            Selecciona un presupuesto
+          </option>
+
+          {opcionesPresupuesto.map((opcion) => (
+            <option
+              key={opcion.value}
+              value={opcion.value}
+              className="bg-neutral-900"
+            >
+              {opcion.label}
+            </option>
+          ))}
         </select>
-        <label className={labelStyle}>
-          Presupuesto estimado
-        </label>
+        <label className={labelStyle}>Presupuesto estimado</label>
       </div>
 
       <button
@@ -171,11 +171,7 @@ export default function Formulario() {
         </p>
       )}
 
-      {error && (
-        <p className="text-red-400 text-sm mt-2">
-          {error}
-        </p>
-      )}
+      {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
     </form>
   );
 }
