@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function CallToAction() {
+export default function CallToAction({ onOpenModal }) {
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,8 +53,8 @@ export default function CallToAction() {
           variants={item}
           className="flex flex-col sm:flex-row justify-center gap-6"
         >
-          <motion.a
-            href="#contacto"
+          <motion.button
+            onClick={onOpenModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-white 
@@ -63,7 +63,7 @@ export default function CallToAction() {
                        transition"
           >
             Cotizar desarrollo de software
-          </motion.a>
+          </motion.button>
         </motion.div>
 
       </motion.div>
