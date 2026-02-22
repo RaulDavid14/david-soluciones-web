@@ -7,6 +7,7 @@ export default function Formulario() {
   const [email, setEmail] = useState("");
   const [descripcionProyecto, setDescripcionProyecto] = useState("");
   const [presupuesto, setPresupuesto] = useState("");
+  const [aceptaAviso, setAceptaAviso] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -43,6 +44,7 @@ export default function Formulario() {
         email: email,
         descripcion_proyecto: descripcionProyecto,
         presupuesto: presupuesto,
+        acepta_aviso: aceptaAviso,
       };
 
       const response = await fetch("http://127.0.0.1:8000/solicitud", {
@@ -59,7 +61,6 @@ export default function Formulario() {
 
       setSuccess(true);
 
-      // limpiar campos
       setNombreCompleto("");
       setNombreOrganizacion("");
       setTelefono("");
@@ -155,6 +156,26 @@ export default function Formulario() {
           ))}
         </select>
         <label className={labelStyle}>Presupuesto estimado</label>
+      </div>
+       <div className="flex items-start gap-2 text-sm">
+        <input
+          type="checkbox"
+          checked={aceptaAviso}
+          onChange={(e) => setAceptaAviso(e.target.checked)}
+          className="mt-1 accent-indigo-500"
+          required
+        />
+        <label>
+          Acepto el{" "}
+          <a
+            href="/Aviso-privacidad-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-400 underline hover:text-indigo-300"
+          >
+            Aviso de Privacidad
+          </a>
+        </label>
       </div>
 
       <button
