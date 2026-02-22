@@ -37,11 +37,11 @@ export default function QualificationSection() {
             </h3>
 
             <ul className="space-y-4 text-neutral-300 text-lg">
-              <li>• Tienen un sistema web, SaaS, ERP o API en producción</li>
-              <li>• Manejan datos de clientes, pagos o información sensible</li>
-              <li>• Ya han sufrido errores, caídas o incidentes de seguridad</li>
-              <li>• Están creciendo y necesitan software estable y escalable</li>
-              <li>• Usan sistemas heredados difíciles de mantener</li>
+              <li>• Necesitan un sistema diseñado específicamente para su modelo de negocio</li>
+              <li>• Buscan automatizar procesos internos y reducir trabajo manual</li>
+              <li>• Requieren integrar múltiples plataformas o APIs en una sola solución</li>
+              <li>• Están creciendo y su software actual ya no es suficiente</li>
+              <li>• Quieren una solución escalable que evolucione con su empresa</li>
             </ul>
           </motion.div>
 
@@ -53,15 +53,16 @@ export default function QualificationSection() {
             className="bg-neutral-900 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-center"
           >
             <p className="text-xl text-neutral-300 leading-relaxed">
-              Este servicio está diseñado para empresas que necesitan
-              <span className="text-white font-semibold">
-                {" "}soluciones técnicas sólidas, seguras y escalables
-              </span>.
+              Este servicio está enfocado en crear
+            <span className="text-white font-semibold">
+              {" "}software a la medida de tu operación
+            </span>,
+              alineado con tus procesos, objetivos y crecimiento.
             </p>
 
             <p className="text-neutral-400 mt-6">
-              Si tu proyecto requiere algo más que una simple presencia en línea,
-              aquí encontrarás un equipo que analiza, diseña y construye con visión de negocio.
+              Analizamos tu modelo de negocio, diseñamos la arquitectura adecuada y
+              desarrollamos una solución sólida, segura y preparada para escalar.
             </p>
           </motion.div>
 
