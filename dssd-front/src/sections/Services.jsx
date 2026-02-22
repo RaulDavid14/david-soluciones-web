@@ -40,6 +40,7 @@ export default function Services({ onOpenModal }) {
           </p>
 
           <ul className="space-y-3 text-neutral-200 text-base md:text-lg lg:text-xl mb-10">
+            <li>• Soluciones web estratégicas para captación y conversión</li>
             <li>• Sistemas administrativos internos</li>
             <li>• APIs y servicios backend</li>
             <li>• Automatización de procesos</li>

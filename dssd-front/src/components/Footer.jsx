@@ -9,7 +9,7 @@ export default function Footer() {
             David Soluciones TI
           </h3>
           <p className="text-sm leading-relaxed">
-            Servicios profesionales de seguridad informática y desarrollo
+            Servicios profesionales de desarrollo
             de software a la medida para empresas que requieren soluciones
             técnicas confiables.
           </p>
@@ -46,7 +46,6 @@ export default function Footer() {
 
       </div>
 
-      {/* Legal */}
       <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-600">
         © {new Date().getFullYear()} David Soluciones TI. Todos los derechos reservados.
       </div>
