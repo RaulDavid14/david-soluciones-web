@@ -1,7 +1,6 @@
 from rest_framework.generics import CreateAPIView
 from solicitud_proyectos_app.serializers.solicitud import SolicitudSerializer
-from django.conf import settings
-from django.core.mail import EmailMessage, EmailMultiAlternatives
+from solicitud_proyectos_app.services.email_service import send_email_async
 
 
 class CreateSolicitudAV(CreateAPIView):
@@ -40,14 +39,9 @@ class CreateSolicitudAV(CreateAPIView):
         </html>
         """
 
-        email = EmailMultiAlternatives(
-            subject=subject,
-            body=text_content,
-            from_email=settings.EMAIL_HOST_USER,
-            to=[settings.EMAIL_HOST_USER],
-            reply_to=[solicitud.email],
-            cc=['rauldavidc14@gmail.com']
+        send_email_async(
+            subject,
+            text_content,
+            html_content,
+            solicitud.email
         )
-
-        email.attach_alternative(html_content, "text/html")
-        email.send(fail_silently=False)

@@ -4,6 +4,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ENABLE_EMAIL_NOTIFICATIONS = True
+
 CORS_ALLOWED_ORIGINS = [
     'https://davidsolucionesti.com.mx'
     ,'https://www.davidsolucionesti.com.mx'

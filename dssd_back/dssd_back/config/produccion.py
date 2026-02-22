@@ -2,6 +2,8 @@ from .base import *
 
 DEBUG = False
 
+ENABLE_EMAIL_NOTIFICATIONS = False
+
 ALLOWED_HOSTS = ['davidsoluciones.pythonanywhere.com']
 
 CORS_ALLOWED_ORIGINS = [
