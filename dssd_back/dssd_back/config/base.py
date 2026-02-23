@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -37,6 +38,13 @@ DJANGO_APPS = [
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
+
+
+REST_FRAMEWORK = {
+        'DEFAULT_RENDERER_CLASSES': [
+            'rest_framework.renderers.JSONRenderer',
+        ],
+    }
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -97,6 +105,8 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'public/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
